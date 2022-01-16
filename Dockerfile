@@ -12,7 +12,7 @@ RUN         curl -L --silent -o webhook.tar.gz https://github.com/adnanh/webhook
             rm -rf /var/cache/apk/* && \
             rm -rf /go
 
-FROM        alpine:3.11
+FROM        scratch
 COPY        --from=build /usr/local/bin/webhook /usr/local/bin/webhook
 WORKDIR     /etc/webhook
 VOLUME      ["/etc/webhook"]
